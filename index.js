@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentPlayer = "X";
     let gameBoard = ["", "", "", "", "", "", "", "", ""];
 
-    // Dynamically create the game board
+    //create the game board
     for (let i = 0; i < 9; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         board.appendChild(square);
     }
 
-    // Handle player moves
+    //player moves
     function handleMove(index) {
         if (gameBoard[index] === "" && !checkWinner()) {
             gameBoard[index] = currentPlayer;
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // Check for a winner
+    //check winner
     function checkWinner() {
         const winPatterns = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return false;
     }
 
-    // Update the game board
+    //update gameboard
     function updateBoard() {
         const squares = document.querySelectorAll(".square");
         squares.forEach((square, index) => {
